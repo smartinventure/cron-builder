@@ -2,6 +2,8 @@
 
 A visual **cron expression builder for React**. Users choose *hourly / daily / weekly / monthly* and a time, and the component outputs a standard 5-field Linux crontab expression such as `30 2 * * 1,2,3,4,5`. Users who already know cron can switch to Advanced Mode and edit each field directly.
 
+**[▶ Live demo](https://smartinventure.github.io/cron-builder/?open)**
+
 ![Cron Builder – Simple Mode](docs/screenshot.png)
 
 <details>
