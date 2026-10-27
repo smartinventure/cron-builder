@@ -1,0 +1,69 @@
+{
+  "name": "@smartinventure/cron-builder",
+  "version": "1.0.0",
+  "description": "A visual cron expression builder for React — build Linux crontab schedules with a friendly UI.",
+  "license": "MIT",
+  "author": "Martin Weihrauch (smartinventure)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartinventure/cron-builder.git"
+  },
+  "keywords": [
+    "cron",
+    "crontab",
+    "cron-expression",
+    "scheduler",
+    "react",
+    "tailwind",
+    "component"
+  ],
+  "type": "module",
+  "main": "./dist/cron-builder.cjs",
+  "module": "./dist/cron-builder.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/cron-builder.js",
+      "require": "./dist/cron-builder.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.demo.config.ts",
+    "build": "vite build && tsc -p tsconfig.build.json && npm run build:css",
+    "build:css": "tailwindcss -c tailwind.lib.config.js -i src/style.css -o dist/style.css --minify",
+    "build:demo": "vite build --config vite.demo.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "screenshot": "node scripts/screenshot.mjs",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "lucide-react": ">=0.294.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "lucide-react": "^0.460.0",
+    "playwright": "^1.58.2",
+    "postcss": "^8.4.49",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,55 @@
+/*
+ * Standalone stylesheet for apps that do NOT use Tailwind.
+ * Tailwind's global preflight is disabled; this minimal reset is scoped to the
+ * component so it never touches the rest of your page. :where() keeps its
+ * specificity at zero so the utility classes always win.
+ */
+:where(.cron-builder),
+:where(.cron-builder) *,
+:where(.cron-builder) *::before,
+:where(.cron-builder) *::after {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+:where(.cron-builder) {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+:where(.cron-builder) h2,
+:where(.cron-builder) p,
+:where(.cron-builder) ul {
+  margin: 0;
+}
+
+:where(.cron-builder) ul {
+  padding: 0;
+}
+
+:where(.cron-builder) button,
+:where(.cron-builder) input,
+:where(.cron-builder) select {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+:where(.cron-builder) button {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+:where(.cron-builder) code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:where(.cron-builder) svg {
+  display: block;
+}
+
+/* With preflight off, `base` only emits the CSS variables utilities rely on. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
